@@ -1,0 +1,23 @@
+{
+  "name": "claude-architect",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "better-sqlite3": "^12.8.0",
+    "dotenv": "^17.3.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
