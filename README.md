@@ -1,6 +1,6 @@
 # Claude Architect
 
-A production-grade GLP-1 clinical research agent built as part of the **Claude Certified Architect** curriculum. Every phase is built from scratch — no pre-built agents, no tutorials followed blindly.
+A production-grade GLP-1 clinical research agent built as part of the **Claude Certified Architect** curriculum. Every phase is built from scratch — no pre-built agents, no tutorials.
 
 ## What This Is
 
