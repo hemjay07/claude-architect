@@ -1,0 +1,47 @@
+TITLE: Thyroid Cancer Risk with GLP-1 Receptor Agonists — Safety Review
+DRUG CLASS: GLP-1 receptor agonists
+
+BACKGROUND:
+GLP-1 receptors are expressed on thyroid C-cells. In rodent studies, GLP-1 RAs caused 
+dose-dependent C-cell hyperplasia and medullary thyroid carcinoma (MTC). This preclinical 
+finding prompted a black box warning and dedicated human safety surveillance.
+
+PRECLINICAL DATA:
+- Rats and mice: dose-dependent C-cell hyperplasia and MTC with all GLP-1 RAs
+- Monkeys: no C-cell changes observed at clinically relevant exposures
+- Species difference attributed to much higher GLP-1 receptor density on rodent C-cells
+- Human C-cells have very low GLP-1 receptor expression — mechanistic basis for concern is weak
+
+HUMAN EVIDENCE:
+- No MTC cases causally attributed to GLP-1 RAs in any major CVOT
+- LEADER, SUSTAIN-6, SELECT: no increased thyroid malignancy signal
+- Pharmacovigilance databases: case reports of MTC but no confirmed causal association
+- Calcitonin levels: no consistent increase observed in clinical trials
+- Population-based studies: conflicting results, no definitive signal
+
+REGULATORY STATUS:
+- Black box warning on all GLP-1 RA labels: contraindicated in patients with personal or 
+  family history of MTC or Multiple Endocrine Neoplasia type 2 (MEN2)
+- Warning based on rodent data — precautionary principle
+- FDA and EMA maintain warning despite absence of human causal evidence
+- Routine calcitonin monitoring not recommended for asymptomatic patients
+
+PAPILLARY THYROID CANCER:
+- Some observational studies suggested increased papillary thyroid cancer risk
+- Subsequent larger studies and meta-analyses did not confirm this association
+- Current consensus: no established causal link with papillary thyroid cancer
+
+CLINICAL GUIDANCE:
+- Contraindicated: personal or family history of MTC or MEN2
+- Not contraindicated: benign thyroid nodules, hypothyroidism, or other thyroid conditions
+- Counsel patients about theoretical risk and signs of thyroid tumour (neck mass, dysphagia)
+- Routine calcitonin or thyroid ultrasound monitoring not required in low-risk patients
+- Elevated calcitonin at baseline: investigate before initiating, consider endocrinology referral
+
+CLINICAL IMPLICATIONS:
+The thyroid cancer concern is primarily based on rodent data with a species-specific mechanism 
+that does not reliably translate to humans. The absolute contraindication for MTC/MEN2 history 
+is appropriate. For the general population, the theoretical risk is not supported by human 
+clinical trial evidence and should not prevent use when clinically indicated.
+
+SOURCE: Bethel MA, et al. Lancet Diabetes Endocrinol. 2019;7(1):13-23. Safety analysis.

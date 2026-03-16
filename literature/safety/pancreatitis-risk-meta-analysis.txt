@@ -1,0 +1,46 @@
+TITLE: Pancreatitis Risk with GLP-1 Receptor Agonists — Meta-Analysis Review
+DRUG CLASS: GLP-1 receptor agonists
+
+BACKGROUND:
+Pancreatitis was identified as a potential concern with GLP-1 RAs based on preclinical data 
+showing pancreatic ductal hyperplasia in rodent models. This prompted regulatory scrutiny 
+and dedicated safety analyses across all major CVOTs.
+
+EVIDENCE FROM MAJOR TRIALS:
+- LEADER (liraglutide): 18 vs 23 pancreatitis events — not increased with liraglutide
+- SUSTAIN-6 (semaglutide): 5 vs 2 events — numerically higher but not significant (small numbers)
+- SELECT (semaglutide 2.4mg): no increased pancreatitis signal reported
+- EXSCEL (exenatide): similar rates between arms
+- ELIXA (lixisenatide): similar rates between arms
+
+META-ANALYSIS FINDINGS:
+- Pooled analysis of all GLP-1 RA CVOTs: no statistically significant increase in pancreatitis
+- Relative risk approximately 1.0-1.2 — not significant
+- Absolute event rates low in both arms across all trials
+- No dose-response relationship demonstrated
+
+REGULATORY STATUS:
+- FDA label includes pancreatitis as a warning for all GLP-1 RAs
+- Warning based on preclinical data and case reports, not CVOT evidence
+- EMA similarly maintains pancreatitis warning
+- Labeled as: discontinue if pancreatitis suspected, do not restart if confirmed
+
+CLINICAL GUIDANCE:
+- Prior history of pancreatitis: relative contraindication — exercise caution
+- Active pancreatitis: contraindicated
+- Patients with risk factors (gallstones, heavy alcohol use, hypertriglyceridaemia): 
+  assess benefit-risk carefully
+- Routine pancreatic enzyme monitoring not recommended in asymptomatic patients
+
+CONTRAST WITH PRECLINICAL DATA:
+- Rodent studies showed pancreatic ductal changes not replicated in humans
+- Human pancreatic pathology studies (post-mortem) did not confirm ductal hyperplasia
+- FDA and EMA reviewed raw pancreatic pathology data — no human safety signal confirmed
+
+CLINICAL IMPLICATIONS:
+The pancreatitis risk from GLP-1 RAs appears to be a class label warning not supported by 
+robust clinical trial evidence. However, the labeled contraindication for active or recent 
+pancreatitis should be respected. The benefit-risk ratio for most patients remains strongly 
+favorable given the CV and metabolic benefits demonstrated in large RCTs.
+
+SOURCE: Monami M, et al. Diabetes Obes Metab. 2014;16(10):938-943. Meta-analysis.

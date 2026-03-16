@@ -1,0 +1,26 @@
+TITLE: STEP-HFpEF — Semaglutide in Heart Failure with Preserved Ejection Fraction and Obesity
+DRUG: Semaglutide subcutaneous 2.4mg weekly
+POPULATION: 529 adults with HFpEF (EF ≥45%), BMI ≥30, no T2DM
+DURATION: 52 weeks (1 year)
+PRIMARY ENDPOINT: Change in KCCQ-CSS score AND percentage change in body weight (dual primary)
+
+KEY RESULTS:
+- KCCQ-CSS improvement: +7.8 points vs +4.3 points placebo (between-group difference +3.3 points), p<0.001
+- Body weight change: -13.3% vs -2.6% placebo, p<0.001
+- 6-minute walk distance: +21.5m vs +1.2m placebo — significant
+- CRP reduction: -43% vs -7% placebo — significant inflammation reduction
+- NT-proBNP: -20% vs -5% placebo — significant
+- HF hospitalisation or urgent visit: 4.3% vs 8.9% placebo — directionally favorable
+- All-cause mortality: similar between arms
+
+SAFETY SIGNALS:
+- Nausea: 31% vs 9% placebo
+- Vomiting: 15% vs 3% placebo
+- GI adverse events leading to discontinuation: 5% vs 0.8%
+- No worsening of HF symptoms
+- Heart rate: +2 bpm vs placebo
+
+CLINICAL IMPLICATIONS:
+STEP-HFpEF is the first trial to demonstrate symptomatic and functional benefit of a GLP-1 RA specifically in HFpEF with obesity. The dual primary endpoint was met. Inflammation reduction (CRP) suggests a mechanism beyond weight loss alone. No mortality benefit demonstrated — longer trials needed. Results support semaglutide use in obese HFpEF patients without T2DM.
+
+SOURCE: Kosiborod MN, et al. N Engl J Med. 2023;389(12):1069-1084. doi:10.1056/NEJMoa2309424

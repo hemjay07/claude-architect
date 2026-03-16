@@ -1,0 +1,25 @@
+TITLE: SELECT — Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes
+DRUG: Semaglutide subcutaneous 2.4mg weekly
+POPULATION: 17,604 adults with BMI ≥27, established cardiovascular disease, NO type 2 diabetes
+DURATION: Mean 39.8 months (3.3 years)
+PRIMARY ENDPOINT: First occurrence of 3-point MACE (CV death, non-fatal MI, non-fatal stroke)
+
+KEY RESULTS:
+- Primary endpoint: HR 0.80 (95% CI 0.72-0.90), p<0.001 — superiority demonstrated
+- CV death: HR 0.85 (95% CI 0.71-1.01) — not significant
+- Non-fatal MI: HR 0.72 (95% CI 0.61-0.85) — significant
+- Non-fatal stroke: HR 0.67 (95% CI 0.55-0.82) — significant  
+- Body weight: -9.39% vs -0.88% placebo
+- HbA1c: not applicable (non-diabetic population)
+
+SAFETY SIGNALS:
+- Nausea: 44% vs 16% placebo — most common adverse event
+- Vomiting: 25% vs 7% placebo
+- Serious adverse events leading to discontinuation: 2.3% vs 1.5%
+- No diabetic retinopathy signal (non-diabetic population)
+- New onset diabetes: lower in semaglutide arm
+
+CLINICAL IMPLICATIONS:
+SELECT is the landmark trial establishing CV benefit of GLP-1 RA in non-diabetic patients with obesity and established CVD. This is the first evidence of CV superiority in a population without T2DM, extending the indication beyond diabetes management. The absolute risk reduction was 1.5% over 3.3 years (NNT approximately 67).
+
+SOURCE: Lincoff AM, et al. N Engl J Med. 2023;389(24):2221-2232. doi:10.1056/NEJMoa2307563

@@ -1,0 +1,24 @@
+TITLE: SUSTAIN-6 — Semaglutide and Cardiovascular Outcomes in Type 2 Diabetes
+DRUG: Semaglutide subcutaneous 0.5mg and 1.0mg weekly
+POPULATION: 3,297 adults with T2DM aged ≥50 years with established cardiovascular disease, chronic kidney disease, or both
+DURATION: 104 weeks (2 years)
+PRIMARY ENDPOINT: First occurrence of 3-point MACE (CV death, non-fatal MI, non-fatal stroke)
+
+KEY RESULTS:
+- Primary endpoint: HR 0.74 (95% CI 0.58-0.95), p<0.001 for non-inferiority, p=0.02 for superiority
+- Non-fatal stroke: HR 0.61 (95% CI 0.38-0.99) — significant reduction
+- Non-fatal MI: HR 0.74 (95% CI 0.51-1.08) — not significant
+- CV death: HR 0.98 (95% CI 0.65-1.48) — not significant
+- HbA1c reduction: -1.1% (0.5mg) and -1.4% (1.0mg) vs -0.4% placebo
+- Body weight: -3.6kg (0.5mg) and -4.5kg (1.0mg) vs -0.5kg placebo
+
+SAFETY SIGNALS:
+- Diabetic retinopathy complications: 3.0% vs 1.8% placebo (HR 1.76, 95% CI 1.11-2.78) — IMPORTANT
+- Nausea: 22% vs 9% placebo — mostly mild, transient
+- Vomiting: 8% vs 2% placebo
+- Pancreatitis: 5 vs 2 events — not statistically significant
+
+CLINICAL IMPLICATIONS:
+SUSTAIN-6 was the first trial to demonstrate CV superiority of a GLP-1 RA in T2DM. The retinopathy signal requires monitoring in patients with pre-existing diabetic retinopathy. The trial was powered for non-inferiority — the superiority result should be interpreted as hypothesis-generating.
+
+SOURCE: Marso SP, et al. N Engl J Med. 2016;375(19):1834-1844. doi:10.1056/NEJMoa1607141

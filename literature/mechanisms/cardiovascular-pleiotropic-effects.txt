@@ -1,0 +1,45 @@
+TITLE: Cardiovascular Pleiotropic Effects of GLP-1 Receptor Agonists
+DRUG CLASS: GLP-1 receptor agonists
+
+OVERVIEW:
+The cardiovascular benefits of GLP-1 RAs extend beyond glycemic control and weight loss. 
+These pleiotropic effects are observed even in non-diabetic populations (SELECT trial) 
+suggesting direct cardiovascular mechanisms independent of metabolic improvement.
+
+ATHEROSCLEROSIS:
+- GLP-1 receptors expressed on macrophages, endothelial cells, and vascular smooth muscle
+- Reduce macrophage foam cell formation — key step in plaque development
+- Improve endothelial function — increase nitric oxide bioavailability
+- Reduce vascular inflammation — lower CRP, IL-6, TNF-alpha
+- Stabilise existing atherosclerotic plaques
+- Effects demonstrated in human coronary artery studies
+
+HEART FAILURE:
+- Direct cardiac GLP-1 receptor activation — positive inotropic effects
+- Reduce cardiac fibrosis and hypertrophy in animal models
+- STEP-HFpEF: symptomatic improvement in HFpEF with obesity
+- Mechanism in HFpEF likely multifactorial: weight loss + anti-inflammatory + direct cardiac effects
+- Less clear benefit in HFrEF — trials ongoing
+
+BLOOD PRESSURE:
+- Consistent modest reduction in systolic BP (-2 to -5 mmHg) across trials
+- Mechanism: natriuresis, weight loss, vasodilation
+- Additive to other antihypertensive agents
+
+LIPIDS:
+- Modest LDL reduction (-3 to -5%)
+- Triglyceride reduction (-10 to -20%)
+- HDL increase (+2 to +5%)
+- Effects partly mediated by weight loss, partly direct hepatic effects
+
+HEART RATE:
+- Consistent increase of +2-4 bpm across all GLP-1 RAs
+- Mechanism unclear — possible sympathetic nervous system activation
+- Clinical significance uncertain — no increased arrhythmia signal in trials
+
+CLINICAL IMPLICATIONS:
+The pleiotropic CV effects explain why CV benefit is observed in non-diabetic patients (SELECT) 
+and why the magnitude of CV benefit exceeds what would be predicted from metabolic improvements 
+alone. This supports use of GLP-1 RAs in high CV risk patients regardless of diabetic status.
+
+SOURCE: Marso SP, McGuire DK. Lancet Diabetes Endocrinol. 2017;5(4):246-248. Review.

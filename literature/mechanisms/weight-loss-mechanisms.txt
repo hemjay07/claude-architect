@@ -1,0 +1,41 @@
+TITLE: Mechanisms of Weight Loss with GLP-1 Receptor Agonists
+DRUG CLASS: GLP-1 receptor agonists
+
+CENTRAL MECHANISMS (primary):
+- GLP-1 receptors expressed in hypothalamus, brainstem, and reward pathways
+- Hypothalamic activation reduces appetite and food intake
+- Brainstem (area postrema) activation contributes to nausea and satiety signaling
+- Reward pathway modulation reduces food cravings and hedonic eating
+- Slows gastric emptying — prolongs satiety after meals
+- These central effects are dose-dependent — higher doses (2.4mg semaglutide) produce greater weight loss
+
+PERIPHERAL MECHANISMS (secondary):
+- Gastric emptying delay — reduces postprandial glucose and prolongs fullness
+- Reduced glucagon secretion — decreases hepatic glucose output and may reduce fat storage
+- Modest increase in energy expenditure — mechanism not fully characterised
+
+MAGNITUDE OF WEIGHT LOSS BY AGENT:
+- Liraglutide 3.0mg: approximately -8% body weight (SCALE trial)
+- Semaglutide 1.0mg (diabetes dose): approximately -6% body weight
+- Semaglutide 2.4mg (obesity dose): approximately -15% body weight (STEP-1)
+- Tirzepatide 15mg: approximately -21% body weight (SURMOUNT-1)
+- Comparison: bariatric surgery typically -25 to -35% body weight
+
+DOSE DEPENDENCY:
+- Weight loss is strongly dose-dependent for both semaglutide and tirzepatide
+- Dose escalation protocols (start low, increase every 4 weeks) reduce GI adverse events
+- Most weight loss occurs in first 6 months — plateau typically reached by 12-16 months
+- Weight regain occurs rapidly after discontinuation — treatment is not curative
+
+PREDICTORS OF RESPONSE:
+- Early weight loss (4% at 16 weeks) predicts good long-term response
+- Baseline BMI does not strongly predict magnitude of % weight loss
+- Presence of T2DM attenuates weight loss vs non-diabetic patients
+
+CLINICAL IMPLICATIONS:
+The central mechanism of action explains why GLP-1 RAs produce substantially more weight loss 
+than peripheral-acting agents. The dose-response relationship means obesity doses (semaglutide 2.4mg, 
+tirzepatide 15mg) should be used when weight loss is the primary goal — diabetes doses 
+(semaglutide 1.0mg) produce meaningful but lower weight loss.
+
+SOURCE: Drucker DJ. Cell Metab. 2022;34(1):25-44. Review article.

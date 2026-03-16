@@ -1,0 +1,51 @@
+TITLE: Gastrointestinal Adverse Events with GLP-1 Receptor Agonists — Clinical Review
+DRUG CLASS: GLP-1 receptor agonists
+
+OVERVIEW:
+GI adverse events are the most common side effects of GLP-1 RAs, occurring in 30-50% of patients. 
+They are the primary reason for treatment discontinuation. Understanding their pattern and 
+management is essential for clinical use.
+
+INCIDENCE BY EVENT TYPE (pooled across major trials):
+- Nausea: 30-44% with GLP-1 RA vs 8-16% placebo
+- Vomiting: 15-25% vs 3-7% placebo
+- Diarrhoea: 20-30% vs 10-16% placebo
+- Constipation: 10-24% vs 5-11% placebo
+- Abdominal pain: 10-15% vs 5-8% placebo
+- Dyspepsia: 5-10% vs 2-5% placebo
+- GI events leading to discontinuation: 4-7% vs 0.5-1.5% placebo
+
+PATTERN AND TIMING:
+- Most GI events occur during dose escalation phase (first 4-16 weeks)
+- Severity typically mild to moderate
+- Events are transient — resolve with continued treatment in most patients
+- Plateau effect — GI events decrease after reaching maintenance dose
+- Higher doses associated with higher rates (semaglutide 2.4mg > 1.0mg)
+
+MANAGEMENT STRATEGIES:
+- Slow dose escalation — standard 4-week intervals reduce GI burden
+- Take injection on same day each week — consistent exposure
+- Eat smaller, lower-fat meals during initiation
+- Avoid lying down immediately after eating
+- Temporary dose reduction if intolerable — return to escalation when tolerated
+- Anti-emetics rarely needed but can be used short-term
+
+RISK FACTORS FOR SEVERE GI EVENTS:
+- Prior history of gastroparesis — relative contraindication
+- Rapid dose escalation
+- High-fat diet
+- Concurrent use of other agents slowing gastric motility
+
+GASTROPARESIS CONCERN:
+- GLP-1 RAs slow gastric emptying — can worsen pre-existing gastroparesis
+- Case reports of new-onset gastroparesis — causal relationship not established
+- FDA added warning in 2023 regarding gastroparesis risk
+- Patients with symptoms of gastroparesis should be evaluated before initiating
+
+CLINICAL IMPLICATIONS:
+GI adverse events are expected, manageable, and usually transient. Patient counseling before 
+initiation significantly improves adherence. The benefit-risk profile remains favorable for 
+most patients. Pre-existing gastroparesis is a relative contraindication requiring careful 
+clinical assessment.
+
+SOURCE: Davies M, et al. Diabetes Obes Metab. 2021;23(4):938-946. Systematic review.

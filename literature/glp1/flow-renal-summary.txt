@@ -1,0 +1,27 @@
+TITLE: FLOW — Semaglutide and Kidney Outcomes in Type 2 Diabetes
+DRUG: Semaglutide subcutaneous 1.0mg weekly
+POPULATION: 3,533 adults with T2DM, eGFR 25-75 mL/min/1.73m², UACR ≥300 mg/g
+DURATION: Median 3.4 years
+PRIMARY ENDPOINT: Renal composite (kidney failure, ≥50% sustained eGFR decline, renal or CV death)
+
+KEY RESULTS:
+- Primary endpoint: HR 0.76 (95% CI 0.66-0.88), p<0.001 — superiority demonstrated
+- Kidney failure: HR 0.79 (95% CI 0.66-0.94) — significant
+- ≥50% eGFR decline: HR 0.57 (95% CI 0.45-0.74) — significant
+- CV death: HR 0.71 (95% CI 0.56-0.89) — significant
+- All-cause mortality: HR 0.80 (95% CI 0.67-0.95) — significant
+- eGFR slope: -2.19 vs -3.36 mL/min/1.73m²/year — slower decline with semaglutide
+- UACR reduction: -32% vs placebo
+- HbA1c reduction: -0.9% vs placebo
+- Body weight: -3.8kg vs placebo
+
+SAFETY SIGNALS:
+- Nausea: 17% vs 9% placebo
+- Serious adverse events: similar between arms
+- Acute kidney injury: lower in semaglutide arm
+- No new safety signals beyond established GLP-1 RA profile
+
+CLINICAL IMPLICATIONS:
+FLOW is the first dedicated renal outcomes trial for a GLP-1 RA and establishes semaglutide as a renoprotective agent in T2DM with CKD. The eGFR slope benefit suggests disease-modifying effects beyond glycemic control. Results are additive to SGLT2 inhibitor renal benefits — combination therapy is now supported in high-risk CKD patients.
+
+SOURCE: Perkovic V, et al. N Engl J Med. 2024;390(18):1671-1683. doi:10.1056/NEJMoa2403347

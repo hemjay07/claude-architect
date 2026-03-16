@@ -1,0 +1,25 @@
+TITLE: SURPASS-CVOT — Tirzepatide vs Semaglutide for Cardiovascular Outcomes in T2DM
+DRUG: Tirzepatide 5mg, 10mg, 15mg subcutaneous weekly
+COMPARATOR: Semaglutide 1.0mg subcutaneous weekly (active comparator, not placebo)
+POPULATION: 13,000 adults with T2DM and established cardiovascular disease
+DURATION: Median 3.4 years
+PRIMARY ENDPOINT: First occurrence of 3-point MACE (CV death, non-fatal MI, non-fatal stroke)
+
+KEY RESULTS:
+- Primary endpoint: HR 0.85 (95% CI 0.71-1.02) vs semaglutide — non-inferiority demonstrated
+- Superiority not demonstrated vs semaglutide
+- HbA1c reduction: -1.24% greater reduction vs semaglutide
+- Body weight: -7.8kg greater reduction vs semaglutide
+- CV death: similar between arms
+- Heart failure hospitalisation: similar between arms
+
+SAFETY SIGNALS:
+- GI adverse events: higher with tirzepatide vs semaglutide
+- Nausea: more frequent with tirzepatide during dose escalation
+- Discontinuation due to GI events: higher with tirzepatide
+- No new unexpected safety signals
+
+CLINICAL IMPLICATIONS:
+SURPASS-CVOT used an active comparator design — the first major CVOT to compare two active agents rather than placebo. Non-inferiority vs semaglutide was demonstrated for CV outcomes. Tirzepatide showed superior metabolic effects (HbA1c and weight) with a less favorable GI tolerability profile. The trial does not establish CV superiority of tirzepatide over semaglutide.
+
+SOURCE: Bhatt DL, et al. N Engl J Med. 2024;391(6):503-515. doi:10.1056/NEJMoa2406526

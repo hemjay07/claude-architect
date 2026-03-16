@@ -1,0 +1,26 @@
+TITLE: LEADER — Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes
+DRUG: Liraglutide 1.8mg subcutaneous daily
+POPULATION: 9,340 adults with T2DM aged ≥50 with established CVD or ≥60 with CV risk factors
+DURATION: Median 3.8 years
+PRIMARY ENDPOINT: First occurrence of 3-point MACE (CV death, non-fatal MI, non-fatal stroke)
+
+KEY RESULTS:
+- Primary endpoint: HR 0.87 (95% CI 0.78-0.97), p=0.01 — superiority demonstrated
+- CV death: HR 0.78 (95% CI 0.66-0.93) — significant
+- Non-fatal MI: HR 0.88 (95% CI 0.75-1.03) — not significant
+- Non-fatal stroke: HR 0.89 (95% CI 0.72-1.11) — not significant
+- All-cause mortality: HR 0.85 (95% CI 0.74-0.97) — significant
+- HbA1c reduction: -0.40% vs placebo at 36 months
+- Body weight: -2.3kg vs placebo
+
+SAFETY SIGNALS:
+- Nausea: 17% vs 9% placebo — mostly mild, transient
+- Vomiting: 7% vs 4% placebo
+- Pancreatitis: 18 vs 23 events — not increased with liraglutide
+- Gallbladder disease: higher in liraglutide arm
+- Heart rate increase: +3 bpm vs placebo
+
+CLINICAL IMPLICATIONS:
+LEADER established liraglutide as the first GLP-1 RA with demonstrated CV mortality reduction. The CV death reduction is the most clinically significant finding — this drove the overall MACE benefit. Unlike SUSTAIN-6, no retinopathy signal was observed. Results supported guideline recommendations for liraglutide in T2DM patients with established CVD.
+
+SOURCE: Marso SP, et al. N Engl J Med. 2016;375(4):311-322. doi:10.1056/NEJMoa1603827
