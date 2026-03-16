@@ -38,8 +38,10 @@ export class AnthropicClient {
 
     const params : Anthropic.MessageCreateParamsNonStreaming ={
         model,
-        max_tokens: options.maxTokens ?? 1024,
-        messages
+        max_tokens : options.thinking 
+            ? (options.thinkingBudget ?? 1024) + 2000
+            : (options.maxTokens ?? 1024),
+         messages
     }
 
     if (options.system){
