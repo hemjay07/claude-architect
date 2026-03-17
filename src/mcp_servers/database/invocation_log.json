@@ -1,0 +1,20 @@
+[
+  {
+    "timeStamp": "2026-03-17T00:06:05.170Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 6,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-17T00:06:05.179Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT trial_name, drug FROM trials WHERE superiority = 1 LIMIT 3"
+    },
+    "latencyMs": 0,
+    "outputBytes": 139,
+    "success": true
+  }
+]
