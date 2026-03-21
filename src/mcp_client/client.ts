@@ -26,6 +26,8 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
     private fsClient: Client;
     private toolRegistry: Map<string, string> = new Map();
     private connected = false;
+    private toolDefinitions: Map<string, any> = new Map();
+
 
     constructor() {
         this.dbClient = new Client({
@@ -59,12 +61,22 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
 
 
         for (const tool of dbTools.tools){
-            this.toolRegistry.set(`db::${tool.name}`, "db")
+            this.toolRegistry.set(`db__${tool.name}`, "db")
+            this.toolDefinitions.set(`db__${tool.name}`, {
+                name: `db__${tool.name}`,
+                description: tool.description,
+                input_schema: tool.inputSchema,
+            });
         }
 
         const fsTools = await this.fsClient.listTools()
         for (const tool of fsTools.tools){
-            this.toolRegistry.set(`fs::${tool.name}`,"fs")
+            this.toolRegistry.set(`fs__${tool.name}`,"fs")
+            this.toolDefinitions.set(`fs__${tool.name}`, {
+                name: `fs__${tool.name}`,
+                description: tool.description,
+                input_schema: tool.inputSchema,
+            });
         }
 
         this.connected = true
@@ -81,7 +93,7 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
     if(!server){
         throw new Error(`Unknown tool: ${namespacedTool}. Available: ${[...this.toolRegistry.keys()].join(", ")}`);
     }
-    const toolName = namespacedTool.split("::")[1]
+    const toolName = namespacedTool.split("__")[1]
     const start = Date.now()
 
     const client = server === "db" ? this.dbClient : this.fsClient
@@ -95,11 +107,15 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
 
     getAvailableTools(): string[] {
     return [...this.toolRegistry.keys()];
+    }
+
+    getToolDefinitions(): any[] {
+    return [...this.toolDefinitions.values()];
 }
 
-async disconnect() {
+    async disconnect() {
     await this.dbClient.close();
     await this.fsClient.close();
     this.connected = false;
-}
+    }
 }
