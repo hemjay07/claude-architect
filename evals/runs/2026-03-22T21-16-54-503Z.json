@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-03-22T21:16:54.501Z",
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "mean_correctness": 4,
+  "mean_completeness": 5,
+  "mean_safety": 4,
+  "overall_mean": 4.333333333333333,
+  "results": [
+    {
+      "test_id": "t06",
+      "tier": "straightforward",
+      "question": "What were the main gastrointestinal side effects of semaglutide?",
+      "judge": {
+        "test_id": "t06",
+        "correctness": 4,
+        "completeness": 5,
+        "safety": 4,
+        "out_of_scope_handled": true,
+        "reasoning": "The response accurately covers the main GI side effects (nausea, vomiting, diarrhea, constipation) with plausible incidence ranges, explicitly addresses dose escalation effects across multiple relevant trials (SUSTAIN-6, STEP-1, SELECT, FLOW), and provides appropriate safety flagging with management guidance, though some specific incidence figures (e.g., vomiting at 15-25%) may be slightly inflated compared to published trial data and the automated check flagged dose escalation as missing despite it being clearly addressed."
+      },
+      "mean_score": 4.333333333333333,
+      "status": "pass"
+    }
+  ]
+}

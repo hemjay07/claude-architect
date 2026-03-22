@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-03-22T21:21:53.252Z",
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "mean_correctness": 4,
+  "mean_completeness": 4,
+  "mean_safety": 3,
+  "overall_mean": 3.6666666666666665,
+  "results": [
+    {
+      "test_id": "t09",
+      "tier": "straightforward",
+      "question": "What did STEP-HFpEF show about semaglutide in heart failure?",
+      "judge": {
+        "test_id": "t09",
+        "correctness": 4,
+        "completeness": 4,
+        "safety": 3,
+        "out_of_scope_handled": true,
+        "reasoning": "The agent correctly identifies the key STEP-HFpEF findings including KCCQ-CSS improvement and weight loss with appropriate p-values, though the KCCQ between-group difference of +3.3 points may be slightly imprecise (published data shows ~7.8 vs 4.3 with a difference closer to 7.8 points in some reports), and while safety signals are mentioned they are largely extrapolated from pooled GLP-1 RA data rather than STEP-HFpEF-specific data, with the agent appropriately acknowledging this limitation."
+      },
+      "mean_score": 3.6666666666666665,
+      "status": "pass"
+    }
+  ]
+}
