@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport json, sys, os\ndata = json.load(sys.stdin)\npath = data.get('tool_input', {}).get('file_path', '')\nprotected = ['clinical_trials.db', 'seed.ts']\nif any(p in path for p in protected):\n    print(json.dumps({'decision': 'block', 'reason': f'Protected file: {path}. Modify only with explicit instruction.'}))\nelse:\n    print(json.dumps({'decision': 'approve'}))\n\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '[now | todate, .tool_input.command] | join(\" | \")' >> /Users/mujeeb/claude-architect/.claude/bash_audit.log 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

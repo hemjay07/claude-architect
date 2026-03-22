@@ -3,3 +3,4 @@ dist/
 node_modules/
 usage.db
 *.db
+.claude/bash_audit.log
