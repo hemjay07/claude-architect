@@ -7400,5 +7400,63 @@
     "latencyMs": 2,
     "outputBytes": 6817,
     "success": true
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:23.186Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%SUSTAIN-6%' OR trial_name LIKE '%SUSTAIN6%'"
+    },
+    "latencyMs": 8,
+    "outputBytes": 573,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:26.015Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM outcomes WHERE trial_id = 1"
+    },
+    "latencyMs": 1,
+    "outputBytes": 0,
+    "success": false
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:28.310Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 1,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:31.886Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM safety_events WHERE trial_id = 1"
+    },
+    "latencyMs": 1,
+    "outputBytes": 2,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:34.759Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM safety_events WHERE trial_name LIKE '%SUSTAIN%' OR notes LIKE '%SUSTAIN%'"
+    },
+    "latencyMs": 1,
+    "outputBytes": 0,
+    "success": false
+  },
+  {
+    "timeStamp": "2026-03-22T23:12:37.617Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "latencyMs": 1,
+    "outputBytes": 648,
+    "success": true
   }
 ]

@@ -18090,5 +18090,93 @@
     },
     "outputSize": 1818,
     "latencyMs": 0
+  },
+  {
+    "timestamp": "2026-03-22T23:12:23.196Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%SUSTAIN-6%' OR trial_name LIKE '%SUSTAIN6%'"
+    },
+    "outputSize": 678,
+    "latencyMs": 21
+  },
+  {
+    "timestamp": "2026-03-22T23:12:23.206Z",
+    "server": "fs",
+    "tool": "list_directory",
+    "inputs": {
+      "dirPath": "."
+    },
+    "outputSize": 245,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-22T23:12:26.020Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM outcomes WHERE trial_id = 1"
+    },
+    "outputSize": 97,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-22T23:12:26.027Z",
+    "server": "fs",
+    "tool": "list_directory",
+    "inputs": {
+      "dirPath": "glp1"
+    },
+    "outputSize": 596,
+    "latencyMs": 2
+  },
+  {
+    "timestamp": "2026-03-22T23:12:28.314Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-22T23:12:28.323Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/sustain-6-summary.txt"
+    },
+    "outputSize": 1545,
+    "latencyMs": 2
+  },
+  {
+    "timestamp": "2026-03-22T23:12:31.890Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM safety_events WHERE trial_id = 1"
+    },
+    "outputSize": 41,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-22T23:12:34.763Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM safety_events WHERE trial_name LIKE '%SUSTAIN%' OR notes LIKE '%SUSTAIN%'"
+    },
+    "outputSize": 100,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-22T23:12:37.621Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 8
   }
 ]
