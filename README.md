@@ -13,9 +13,10 @@ flowchart TD
     User(["User Question"])
     User --> Orch
 
-    subgraph Loop["Orchestrator-Researcher-Critic Loop (max 3 iterations)"]
-        Orch["🎯 Orchestrator\ndecomposes task, enforces circuit breakers"]
-        Res["🔬 Researcher\ntool loop → synthesis (two-phase)"]
+    subgraph Agents["Agent Layer"]
+        direction TB
+        Orch["🎯 Orchestrator\ndecomposes task · enforces circuit breakers"]
+        Res["🔬 Researcher\ntwo-phase: tool loop → synthesis"]
         Crit["✅ Critic\nscores accuracy · completeness · safety"]
 
         Orch -- "ResearchTask" --> Res
@@ -24,15 +25,41 @@ flowchart TD
         Crit -. "reject + feedback" .-> Orch
     end
 
-    Res -- "rag__search" --> RAG["📚 RAG Server\nBM25 + vector search\n64 chunks · OpenAI embeddings"]
-    Res -- "db__query_db" --> DB["🗄️ Database Server\nSQL injection defense\npermissions gate"]
-    Res -- "fs__read_file" --> FS["📁 Filesystem Server\npath sandbox security"]
+    subgraph MCP["MCP Server Layer — namespaced tool registry"]
+        direction LR
+        RAG["📚 rag:: RAG Server\nBM25 + vector search\n64 chunks · OpenAI embeddings"]
+        DB["🗄️ db:: Database Server\n4 tools · SQL injection defense\npermissions gate"]
+        FS["📁 fs:: Filesystem Server\n4 tools · path sandbox"]
+    end
 
-    RAG --> Lit["Literature Files\n13 files · 3 directories"]
-    DB --> SQL["SQLite\n12 GLP-1 trials"]
+    Res --> RAG
+    Res --> DB
+    Res --> FS
+
+    subgraph Data["Data Layer"]
+        direction LR
+        SQL["SQLite — 12 GLP-1 trials"]
+        Lit["Literature — 13 files · 3 dirs"]
+        Cache["Embedding Cache"]
+    end
+
+    RAG --> Lit
+    RAG --> Cache
+    DB --> SQL
     FS --> Lit
 
     Orch -- "FinalReport" --> Out(["Clinical Evidence Summary"])
+
+    subgraph Eval["Eval Suite — offline quality gate"]
+        direction LR
+        Dataset["30 test cases\n3 tiers"]
+        Judge["LLM-as-a-Judge\nstructured rubric +\ndeterministic safety overrides"]
+        Reg["Regression Detection\nflags drops > 0.5\nvs locked baseline"]
+
+        Dataset --> Judge --> Reg
+    end
+
+    Out -.-> Dataset
 
     style Orch fill:#1a56db,color:#fff,stroke:#1a56db
     style Res fill:#1a56db,color:#fff,stroke:#1a56db
@@ -42,6 +69,10 @@ flowchart TD
     style FS fill:#0f6e56,color:#fff,stroke:#0f6e56
     style SQL fill:#854f0b,color:#fff,stroke:#854f0b
     style Lit fill:#854f0b,color:#fff,stroke:#854f0b
+    style Cache fill:#854f0b,color:#fff,stroke:#854f0b
+    style Dataset fill:#6b21a8,color:#fff,stroke:#6b21a8
+    style Judge fill:#6b21a8,color:#fff,stroke:#6b21a8
+    style Reg fill:#6b21a8,color:#fff,stroke:#6b21a8
 ```
 
 **Circuit breakers:** Researcher max 20 tool calls → synthesis. Orchestrator max 3 iterations → partial result. Safety score ≤ 2 → immediate escalation. All inter-agent messages Zod-validated.
