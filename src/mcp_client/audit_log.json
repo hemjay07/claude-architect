@@ -18769,5 +18769,436 @@
     "inputs": {},
     "outputSize": 641,
     "latencyMs": 20
+  },
+  {
+    "timestamp": "2026-03-23T22:44:49.125Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes type 2 diabetes",
+      "top_k": 10
+    },
+    "outputSize": 6759,
+    "latencyMs": 306
+  },
+  {
+    "timestamp": "2026-03-23T22:44:49.143Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:44:55.017Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 semaglutide MACE results non-fatal stroke myocardial infarction",
+      "top_k": 5
+    },
+    "outputSize": 3246,
+    "latencyMs": 553
+  },
+  {
+    "timestamp": "2026-03-23T22:44:55.260Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular pleiotropic mechanisms atherosclerosis inflammation",
+      "top_k": 5
+    },
+    "outputSize": 3428,
+    "latencyMs": 234
+  },
+  {
+    "timestamp": "2026-03-23T22:44:55.276Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:44:55.285Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:45:00.238Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.*, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes\nFROM trials t\nLEFT JOIN safety_events se ON t.id = se.trial_id\nWHERE t.drug LIKE '%semaglutide%'\nORDER BY t.trial_name, se.event_type"
+    },
+    "outputSize": 4562,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:45:00.818Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 semaglutide diabetic retinopathy safety signal CV death HbA1c",
+      "top_k": 5
+    },
+    "outputSize": 3180,
+    "latencyMs": 574
+  },
+  {
+    "timestamp": "2026-03-23T22:45:07.544Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "PIONEER-6 oral semaglutide cardiovascular outcomes T2DM CV death",
+      "top_k": 5
+    },
+    "outputSize": 3241,
+    "latencyMs": 641
+  },
+  {
+    "timestamp": "2026-03-23T22:45:07.557Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, t.primary_endpoint, t.primary_result, t.primary_p_value, t.superiority, t.hba1c_reduction, t.weight_reduction_kg, t.cv_death_rr, t.hf_hospitalisation_rr, t.publication_year, t.journal, t.doi\nFROM trials t\nWHERE t.indication LIKE '%T2DM%' OR t.indication LIKE '%CV risk%'\nORDER BY t.publication_year"
+    },
+    "outputSize": 3403,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:46:28.931Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes type 2 diabetes MACE",
+      "top_k": 10
+    },
+    "outputSize": 6711,
+    "latencyMs": 636
+  },
+  {
+    "timestamp": "2026-03-23T22:46:28.962Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 21
+  },
+  {
+    "timestamp": "2026-03-23T22:46:34.830Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 semaglutide primary MACE results non-inferiority superiority retinopathy",
+      "top_k": 8
+    },
+    "outputSize": 5116,
+    "latencyMs": 626
+  },
+  {
+    "timestamp": "2026-03-23T22:46:35.117Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SELECT trial semaglutide obesity cardiovascular T2DM subgroup composition",
+      "top_k": 6
+    },
+    "outputSize": 4067,
+    "latencyMs": 279
+  },
+  {
+    "timestamp": "2026-03-23T22:46:35.132Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 5
+  },
+  {
+    "timestamp": "2026-03-23T22:46:35.141Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:46:39.941Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.*, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t LEFT JOIN safety_events se ON t.id = se.trial_id WHERE t.drug LIKE '%semaglutide%' ORDER BY t.trial_name, se.event_type"
+    },
+    "outputSize": 4562,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:46:40.554Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 non-fatal MI CV death component results semaglutide",
+      "top_k": 5
+    },
+    "outputSize": 3259,
+    "latencyMs": 607
+  },
+  {
+    "timestamp": "2026-03-23T22:46:46.398Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/sustain-6-summary.txt"
+    },
+    "outputSize": 1545,
+    "latencyMs": 11
+  },
+  {
+    "timestamp": "2026-03-23T22:46:46.405Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/select-trial-summary.txt"
+    },
+    "outputSize": 1502,
+    "latencyMs": 2
+  },
+  {
+    "timestamp": "2026-03-23T22:46:46.416Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.publication_year, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id WHERE t.drug LIKE '%semaglutide%' ORDER BY t.trial_name, se.event_type"
+    },
+    "outputSize": 41,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:51:57.282Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes type 2 diabetes",
+      "top_k": 10
+    },
+    "outputSize": 6759,
+    "latencyMs": 831
+  },
+  {
+    "timestamp": "2026-03-23T22:51:57.300Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:52:03.454Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide SUSTAIN-6 MACE non-fatal stroke myocardial infarction safety retinopathy",
+      "top_k": 8
+    },
+    "outputSize": 5114,
+    "latencyMs": 549
+  },
+  {
+    "timestamp": "2026-03-23T22:52:03.713Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "GLP-1 receptor agonist cardiovascular pleiotropic mechanisms anti-atherosclerotic",
+      "top_k": 5
+    },
+    "outputSize": 3438,
+    "latencyMs": 252
+  },
+  {
+    "timestamp": "2026-03-23T22:52:03.725Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 5
+  },
+  {
+    "timestamp": "2026-03-23T22:52:03.734Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:52:07.953Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE drug LIKE '%semaglutide%' OR drug LIKE '%Semaglutide%' ORDER BY publication_year"
+    },
+    "outputSize": 3824,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:52:08.534Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular pleiotropic effects blood pressure inflammation endothelial",
+      "top_k": 5
+    },
+    "outputSize": 3404,
+    "latencyMs": 574
+  },
+  {
+    "timestamp": "2026-03-23T22:52:14.158Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id WHERE (t.drug LIKE '%semaglutide%') ORDER BY t.trial_name, se.event_type"
+    },
+    "outputSize": 41,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:52:14.751Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "PIONEER-6 oral semaglutide cardiovascular outcomes type 2 diabetes non-inferiority",
+      "top_k": 5
+    },
+    "outputSize": 3362,
+    "latencyMs": 587
+  },
+  {
+    "timestamp": "2026-03-23T22:52:20.013Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id ORDER BY t.drug, t.trial_name, se.severity"
+    },
+    "outputSize": 41,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:52:20.827Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide diabetic retinopathy worsening rapid glycaemic lowering mechanism",
+      "top_k": 4
+    },
+    "outputSize": 2858,
+    "latencyMs": 808
+  },
+  {
+    "timestamp": "2026-03-23T22:56:26.484Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes type 2 diabetes",
+      "top_k": 10
+    },
+    "outputSize": 6759,
+    "latencyMs": 728
+  },
+  {
+    "timestamp": "2026-03-23T22:56:26.501Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:56:30.642Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:56:30.651Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:56:31.261Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 semaglutide MACE results diabetic retinopathy safety",
+      "top_k": 5
+    },
+    "outputSize": 3120,
+    "latencyMs": 605
+  },
+  {
+    "timestamp": "2026-03-23T22:56:36.877Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.id, t.trial_name, t.drug, t.n_total, t.duration_years, t.population, t.primary_endpoint, t.primary_result, t.primary_p_value, t.superiority, t.hba1c_reduction, t.weight_reduction_kg, t.cv_death_rr, t.hf_hospitalisation_rr, t.renal_outcome_rr, t.publication_year, t.journal, t.doi FROM trials t WHERE LOWER(t.drug) LIKE '%semaglutide%' ORDER BY t.publication_year"
+    },
+    "outputSize": 3120,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:56:37.548Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "GLP-1 receptor agonist cardiovascular pleiotropic mechanisms anti-inflammatory endothelial",
+      "top_k": 5
+    },
+    "outputSize": 3435,
+    "latencyMs": 664
+  },
+  {
+    "timestamp": "2026-03-23T22:56:43.415Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes, t.trial_name FROM safety_events se JOIN trials t ON se.trial_id = t.id WHERE t.trial_name IN ('SUSTAIN-6', 'PIONEER-6', 'FLOW') ORDER BY t.trial_name, se.severity"
+    },
+    "outputSize": 41,
+    "latencyMs": 10
+  },
+  {
+    "timestamp": "2026-03-23T22:56:44.007Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "PIONEER-6 oral semaglutide cardiovascular outcomes T2DM CV death results",
+      "top_k": 5
+    },
+    "outputSize": 3242,
+    "latencyMs": 582
   }
 ]

@@ -1,4 +1,7 @@
-// src/mcp_servers/rag/index.ts
+import * as fs from "fs";
+import * as path from "path";
+
+const CACHE_PATH = path.join(process.cwd(), "rag_embeddings_cache.json");
 
 import { Chunk } from "./chunker";
 import { BM25Index } from "./bm25";
@@ -16,18 +19,34 @@ export class HybridIndex {
     private bm25: BM25Index = new BM25Index();
     private embeddings: Map<string, number[]> = new Map();
 
-    async build(chunks: Chunk[]): Promise<void> {
-        this.chunks = chunks;
+async build(chunks: Chunk[]): Promise<void> {
+    this.chunks = chunks;
 
-        // Build BM25 index (instant — no API calls)
-        console.error("[RAG] Building BM25 index...");
-        this.bm25.build(chunks);
+    // Build BM25 index (instant — no API calls)
+    console.error("[RAG] Building BM25 index...");
+    this.bm25.build(chunks);
 
-        // Build vector index (requires OpenAI API calls)
+    // Build vector index — load from cache if available
+    if (fs.existsSync(CACHE_PATH)) {
+        console.error("[RAG] Loading embeddings from cache...");
+        const cached = JSON.parse(fs.readFileSync(CACHE_PATH, "utf-8"));
+        this.embeddings = new Map(Object.entries(cached));
+        console.error(`[RAG] Loaded ${this.embeddings.size} cached embeddings.`);
+    } else {
         console.error(`[RAG] Embedding ${chunks.length} chunks...`);
         this.embeddings = await embedChunks(chunks);
-        console.error("[RAG] Index ready.");
+
+        // Save to cache
+        const cacheObj: Record<string, number[]> = {};
+        for (const [key, val] of this.embeddings) {
+            cacheObj[key] = val;
+        }
+        fs.writeFileSync(CACHE_PATH, JSON.stringify(cacheObj));
+        console.error("[RAG] Embeddings cached to disk.");
     }
+
+    console.error("[RAG] Index ready.");
+}
 
     async search(query: string, topK: number = 5): Promise<SearchResult[]> {
         // BM25 keyword search

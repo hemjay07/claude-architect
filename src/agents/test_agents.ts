@@ -1,10 +1,10 @@
 import "dotenv/config";
-import Anthropic from "@anthropic-ai/sdk";
 import { MCPClient } from "../mcp_client/client";
 import { runOrchestrator } from "./orchestrator";
+import { AnthropicClient } from "../api_client/client";
 
 async function main() {
-    const anthropicClient = new Anthropic();
+    const anthropicClient = new AnthropicClient();
     const mcpClient = new MCPClient();
 
     console.log("Starting MCP servers...");

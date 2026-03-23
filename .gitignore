@@ -4,3 +4,4 @@ node_modules/
 usage.db
 *.db
 .claude/bash_audit.log
+rag_embeddings_cache.json

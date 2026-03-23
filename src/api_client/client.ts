@@ -31,6 +31,8 @@ export class AnthropicClient {
         cacheSystem?:boolean;
         thinking?: boolean;
         thinkingBudget?: number
+        tools?: any[];          
+        toolChoice?: any;  
     }={}
    ) : Promise<Anthropic.Message>{
 
@@ -62,6 +64,13 @@ export class AnthropicClient {
             type:"enabled",
             budget_tokens:options.thinkingBudget ?? 1024
         }
+    }
+    
+    if (options.tools) {
+        params.tools = options.tools;
+    }
+    if (options.toolChoice) {
+        params.tool_choice = options.toolChoice;
     }
 
     const response = await this.client.messages.create(params)

@@ -1,5 +1,6 @@
 
 import Anthropic from "@anthropic-ai/sdk";
+import { AnthropicClient } from "../api_client/client";
 import { loadPrompt } from "../prompt_library/prompt_loader";
 import { validateOutput } from "../prompt_library/schema_validator";
 import { ClinicalCritiqueSchema } from "../prompt_library/schemas/clinical_critique_schema";
@@ -7,7 +8,7 @@ import { ResearchFindings, CriticEvaluation, CriticEvaluationSchema } from "./ty
 
 export async function runCritic(
     findings: ResearchFindings,
-    anthropicClient: Anthropic
+    anthropicClient: AnthropicClient
 ): Promise<CriticEvaluation> {
     const prompt = loadPrompt("clinical_critique", "1.0.0");
 
@@ -23,18 +24,20 @@ SAFETY FLAGS: ${findings.safety_flags.join(", ") || "none"}
 DATA GAPS: ${findings.data_gaps.join(", ") || "none"}`;
 
 
-    const response = await anthropicClient.messages.create({
+const response = await anthropicClient.complete(
+    [
+        ...prompt.examples.map((ex, i) => [
+            { role: "user" as const, content: ex.input },
+            { role: "assistant" as const, content: ex.output }
+        ]).flat(),
+        { role: "user", content: input }
+    ] as Anthropic.MessageParam[],
+    {
         model: "claude-sonnet-4-6",
-        max_tokens: 2048,
+        maxTokens: 2048,
         system: prompt.system,
-        messages: [
-            ...prompt.examples.map((ex, i) => [
-                { role: "user" as const, content: ex.input },
-                { role: "assistant" as const, content: ex.output }
-            ]).flat(),
-            { role: "user", content: input }
-        ],
-    });
+    }
+);
 
     const textBlock = response.content.find(b => b.type === "text");
     const rawOutput = textBlock && textBlock.type === "text" ? textBlock.text : "";

@@ -2,7 +2,7 @@ import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
 import * as readline from "readline";
-import Anthropic from "@anthropic-ai/sdk";
+import { AnthropicClient } from "../src/api_client/client";
 import { MCPClient } from "../src/mcp_client/client";
 import { runOrchestrator } from "../src/agents/orchestrator";
 import { judgeResponse, JudgeResult } from "./judge";
@@ -51,7 +51,7 @@ function mean(nums: number[]): number {
 async function runSingleEval(
     testCase: any,
     mcpClient: MCPClient,
-    anthropicClient: Anthropic
+    anthropicClient: AnthropicClient
 ): Promise<EvalResult> {
     const startTime = Date.now();
 
@@ -143,7 +143,7 @@ async function main() {
     const tierId = args.find(a => a.startsWith("--tier="))?.split("=")[1];
     const caseId = args.find(a => a.startsWith("--case="))?.split("=")[1];
 
-    const anthropicClient = new Anthropic();
+    const anthropicClient = new AnthropicClient();
     const mcpClient = new MCPClient();
 
     console.log("Starting MCP servers...");

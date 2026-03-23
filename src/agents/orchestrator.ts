@@ -1,4 +1,4 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { AnthropicClient } from "../api_client/client";
 import { MCPClient } from "../mcp_client/client";
 import { runResearcher } from "./researcher";
 import { runCritic } from "./critic";
@@ -15,7 +15,7 @@ const MAX_ITERATIONS = 3;
 export async function runOrchestrator(
     clinicalQuestion: string,
     mcpClient: MCPClient,
-    anthropicClient: Anthropic
+    anthropicClient: AnthropicClient
 ): Promise<FinalReport> {
 
     console.log(`\nOrchestrator starting: "${clinicalQuestion}"`);

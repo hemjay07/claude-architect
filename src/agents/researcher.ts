@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { AnthropicClient } from "../api_client/client";
 import { MCPClient } from "../mcp_client/client";
 import { validateOutput } from "../prompt_library/schema_validator";
 import { ResearchTask, ResearchFindings, ResearchFindingsSchema } from "./types";
@@ -20,7 +21,7 @@ If a question asks about a specific trial by name and your search results do not
 export async function runResearcher(
     task: ResearchTask,
     mcpClient: MCPClient,
-    anthropicClient: Anthropic
+    anthropicClient: AnthropicClient
 ): Promise<ResearchFindings> {
 
     const availableTools = mcpClient.getToolDefinitions();
@@ -44,13 +45,12 @@ Stop gathering once you have sufficient evidence.`
     const MAX_TOOL_CALLS = 20;
 
     while (toolCallCount < MAX_TOOL_CALLS) {
-        const response = await anthropicClient.messages.create({
-            model: "claude-sonnet-4-6",
-            max_tokens: 8192,
-            system: RESEARCHER_SYSTEM,
-            tools: availableTools as any,
-            messages,
-        });
+const response = await anthropicClient.complete(messages, {
+    model: "claude-sonnet-4-6",
+    maxTokens: 8192,
+    system: RESEARCHER_SYSTEM,
+    tools: availableTools as any,
+});
 
 
         messages.push({ role: "assistant", content: response.content });
@@ -114,13 +114,8 @@ Stop gathering once you have sufficient evidence.`
     }
 
     // Explicit synthesis call with no tools — clean context
-    const synthesisResponse = await anthropicClient.messages.create({
-        model: "claude-sonnet-4-6",
-        max_tokens: 4096,
-        system: "You are a clinical data synthesizer. You receive raw tool results and synthesize them into structured findings. Return ONLY a valid JSON object, no preamble, no markdown.",
-        messages: [{
-            role: "user",
-            content: `Based on this gathered data, synthesize findings for the question: "${task.clinical_question}"
+  const synthesisResponse = await anthropicClient.complete(
+    [{ role: "user", content: `Based on this gathered data, synthesize findings for the question: "${task.clinical_question}"
 
 GATHERED DATA:
 ${toolResultsSummary.join("\n---\n")}
@@ -135,9 +130,13 @@ Return ONLY this JSON structure:
   "safety_flags": ["safety concerns identified"],
   "confidence": "high|medium|low",
   "data_gaps": ["missing data points"]
-}`
-        }]
-    });
+}` }],
+    {
+        model: "claude-sonnet-4-6",
+        maxTokens: 4096,
+        system: "You are a clinical data synthesizer. You receive raw tool results and synthesize them into structured findings. Return ONLY a valid JSON object, no preamble, no markdown.",
+    }
+);
 
     const textBlock = synthesisResponse.content.find(b => b.type === "text");
     let rawOutput = textBlock && textBlock.type === "text" ? textBlock.text : "";

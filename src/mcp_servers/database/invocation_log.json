@@ -7774,5 +7774,207 @@
     "latencyMs": 1,
     "outputBytes": 1850,
     "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:44:49.137Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 1,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:44:55.271Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "latencyMs": 0,
+    "outputBytes": 1850,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:44:55.282Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "latencyMs": 0,
+    "outputBytes": 648,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:45:00.234Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.*, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes\nFROM trials t\nLEFT JOIN safety_events se ON t.id = se.trial_id\nWHERE t.drug LIKE '%semaglutide%'\nORDER BY t.trial_name, se.event_type"
+    },
+    "latencyMs": 0,
+    "outputBytes": 4055,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:45:07.553Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, t.primary_endpoint, t.primary_result, t.primary_p_value, t.superiority, t.hba1c_reduction, t.weight_reduction_kg, t.cv_death_rr, t.hf_hospitalisation_rr, t.publication_year, t.journal, t.doi\nFROM trials t\nWHERE t.indication LIKE '%T2DM%' OR t.indication LIKE '%CV risk%'\nORDER BY t.publication_year"
+    },
+    "latencyMs": 0,
+    "outputBytes": 3012,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:46:28.956Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 0,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:46:35.129Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "latencyMs": 1,
+    "outputBytes": 1850,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:46:35.138Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "latencyMs": 0,
+    "outputBytes": 648,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:46:39.937Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.*, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t LEFT JOIN safety_events se ON t.id = se.trial_id WHERE t.drug LIKE '%semaglutide%' ORDER BY t.trial_name, se.event_type"
+    },
+    "latencyMs": 0,
+    "outputBytes": 4055,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:46:46.411Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.publication_year, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id WHERE t.drug LIKE '%semaglutide%' ORDER BY t.trial_name, se.event_type"
+    },
+    "latencyMs": 0,
+    "outputBytes": 2,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:51:57.294Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 1,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:52:03.722Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "latencyMs": 0,
+    "outputBytes": 1850,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:52:03.731Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "latencyMs": 0,
+    "outputBytes": 648,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:52:07.949Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE drug LIKE '%semaglutide%' OR drug LIKE '%Semaglutide%' ORDER BY publication_year"
+    },
+    "latencyMs": 0,
+    "outputBytes": 3389,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:52:14.154Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id WHERE (t.drug LIKE '%semaglutide%') ORDER BY t.trial_name, se.event_type"
+    },
+    "latencyMs": 0,
+    "outputBytes": 2,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:52:20.007Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id ORDER BY t.drug, t.trial_name, se.severity"
+    },
+    "latencyMs": 0,
+    "outputBytes": 2,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:56:26.496Z",
+    "tool": "list_tables",
+    "inputs": {},
+    "latencyMs": 1,
+    "outputBytes": 71,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:56:30.638Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "latencyMs": 1,
+    "outputBytes": 1850,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:56:30.648Z",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "latencyMs": 0,
+    "outputBytes": 648,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:56:36.873Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.id, t.trial_name, t.drug, t.n_total, t.duration_years, t.population, t.primary_endpoint, t.primary_result, t.primary_p_value, t.superiority, t.hba1c_reduction, t.weight_reduction_kg, t.cv_death_rr, t.hf_hospitalisation_rr, t.renal_outcome_rr, t.publication_year, t.journal, t.doi FROM trials t WHERE LOWER(t.drug) LIKE '%semaglutide%' ORDER BY t.publication_year"
+    },
+    "latencyMs": 1,
+    "outputBytes": 2769,
+    "success": true
+  },
+  {
+    "timeStamp": "2026-03-23T22:56:43.407Z",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes, t.trial_name FROM safety_events se JOIN trials t ON se.trial_id = t.id WHERE t.trial_name IN ('SUSTAIN-6', 'PIONEER-6', 'FLOW') ORDER BY t.trial_name, se.severity"
+    },
+    "latencyMs": 0,
+    "outputBytes": 2,
+    "success": true
   }
 ]
