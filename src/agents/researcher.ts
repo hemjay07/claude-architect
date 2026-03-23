@@ -14,7 +14,8 @@ For each research task:
 6. Flag any safety signals relevant to the question
 
 Return your findings as a JSON object as soon as you have enough data — do not over-gather.
-Never extrapolate beyond what the data shows. If data is missing, say so explicitly.`;
+Never extrapolate beyond what the data shows. If data is missing, say so explicitly.
+If a question asks about a specific trial by name and your search results do not contain data from that trial, explicitly state that the trial was not found in your data sources. Do not substitute data from other trials.`;
 
 export async function runResearcher(
     task: ResearchTask,

@@ -18270,5 +18270,504 @@
     },
     "outputSize": 1511,
     "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:04:27.526Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 semaglutide cardiovascular outcomes",
+      "top_k": 8
+    },
+    "outputSize": 5128,
+    "latencyMs": 583
+  },
+  {
+    "timestamp": "2026-03-23T22:04:27.551Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 13
+  },
+  {
+    "timestamp": "2026-03-23T22:04:32.856Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "SUSTAIN-6 retinopathy safety non-fatal MI stroke results",
+      "top_k": 5
+    },
+    "outputSize": 3297,
+    "latencyMs": 556
+  },
+  {
+    "timestamp": "2026-03-23T22:04:32.870Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%SUSTAIN%' OR trial_name LIKE '%sustain%'"
+    },
+    "outputSize": 678,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:04:32.879Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 3
+  },
+  {
+    "timestamp": "2026-03-23T22:04:36.025Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT se.* FROM safety_events se JOIN trials t ON se.trial_id = t.id WHERE t.trial_name = 'SUSTAIN-6'"
+    },
+    "outputSize": 41,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:05:25.564Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide FLOW trial renal outcomes",
+      "top_k": 8
+    },
+    "outputSize": 5223,
+    "latencyMs": 606
+  },
+  {
+    "timestamp": "2026-03-23T22:05:25.590Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 18
+  },
+  {
+    "timestamp": "2026-03-23T22:05:31.528Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%FLOW%' OR (drug LIKE '%semaglutide%' AND primary_endpoint LIKE '%renal%' OR primary_endpoint LIKE '%kidney%')"
+    },
+    "outputSize": 655,
+    "latencyMs": 12
+  },
+  {
+    "timestamp": "2026-03-23T22:05:31.538Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:05:32.104Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "FLOW trial eGFR slope UACR kidney failure semaglutide CKD endpoints",
+      "top_k": 5
+    },
+    "outputSize": 3295,
+    "latencyMs": 561
+  },
+  {
+    "timestamp": "2026-03-23T22:06:19.442Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes diabetic non-diabetic populations",
+      "top_k": 10
+    },
+    "outputSize": 6907,
+    "latencyMs": 828
+  },
+  {
+    "timestamp": "2026-03-23T22:06:19.463Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:06:24.622Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide MACE reduction mechanisms pleiotropic cardiovascular",
+      "top_k": 8
+    },
+    "outputSize": 5265,
+    "latencyMs": 558
+  },
+  {
+    "timestamp": "2026-03-23T22:06:24.642Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:06:24.652Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:06:31.018Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "\nSELECT \n  t.trial_name, t.drug, t.population, t.indication, t.n_total, t.duration_years,\n  t.primary_result, t.primary_p_value, t.superiority,\n  t.hba1c_reduction, t.weight_reduction_kg,\n  t.cv_death_rr, t.hf_hospitalisation_rr, t.renal_outcome_rr,\n  t.publication_year, t.journal, t.doi\nFROM trials t\nWHERE t.drug LIKE '%semaglutide%' OR t.trial_name IN ('SELECT','SUSTAIN-6','FLOW')\nORDER BY t.publication_year;\n"
+    },
+    "outputSize": 3015,
+    "latencyMs": 10
+  },
+  {
+    "timestamp": "2026-03-23T22:06:31.654Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "GLP-1 receptor agonist cardiovascular pleiotropic mechanisms endothelial inflammation atherosclerosis",
+      "top_k": 6
+    },
+    "outputSize": 4129,
+    "latencyMs": 629
+  },
+  {
+    "timestamp": "2026-03-23T22:06:38.518Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "\nSELECT \n  t.trial_name, t.population, t.indication,\n  se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes\nFROM trials t\nJOIN safety_events se ON t.id = se.trial_id\nWHERE t.trial_name IN ('SELECT', 'SUSTAIN-6', 'PIONEER-6', 'FLOW', 'STEP-HFpEF')\nORDER BY t.trial_name, se.severity;\n"
+    },
+    "outputSize": 41,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:06:38.538Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "mechanisms/cardiovascular-pleiotropic-effects.txt"
+    },
+    "outputSize": 2208,
+    "latencyMs": 13
+  },
+  {
+    "timestamp": "2026-03-23T22:06:43.198Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "\nSELECT \n  t.trial_name, t.population, t.indication,\n  se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes\nFROM trials t\nJOIN safety_events se ON t.id = se.trial_id\nWHERE t.drug LIKE '%semaglutide%'\nORDER BY t.trial_name, se.severity;\n"
+    },
+    "outputSize": 41,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:06:43.206Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/select-trial-summary.txt"
+    },
+    "outputSize": 1502,
+    "latencyMs": 3
+  },
+  {
+    "timestamp": "2026-03-23T22:06:43.213Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/sustain-6-summary.txt"
+    },
+    "outputSize": 1545,
+    "latencyMs": 2
+  },
+  {
+    "timestamp": "2026-03-23T22:08:26.049Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide heart failure preserved ejection fraction HFpEF",
+      "top_k": 10
+    },
+    "outputSize": 6783,
+    "latencyMs": 691
+  },
+  {
+    "timestamp": "2026-03-23T22:08:26.072Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 11
+  },
+  {
+    "timestamp": "2026-03-23T22:08:32.627Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide HFpEF KCCQ functional outcomes inflammation CRP mechanism",
+      "top_k": 5
+    },
+    "outputSize": 3309,
+    "latencyMs": 517
+  },
+  {
+    "timestamp": "2026-03-23T22:08:32.918Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide heart failure hospitalisation mortality ejection fraction outcomes",
+      "top_k": 5
+    },
+    "outputSize": 3340,
+    "latencyMs": 277
+  },
+  {
+    "timestamp": "2026-03-23T22:08:32.935Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:08:32.945Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:08:38.166Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%HFpEF%' OR indication LIKE '%heart failure%' OR indication LIKE '%HFpEF%'"
+    },
+    "outputSize": 672,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:08:38.177Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT t.trial_name, t.drug, t.n_total, t.duration_years, se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM trials t JOIN safety_events se ON t.id = se.trial_id WHERE t.trial_name LIKE '%HFpEF%' OR t.indication LIKE '%heart failure%'"
+    },
+    "outputSize": 41,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:08:41.440Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT se.event_type, se.drug_arm_pct, se.placebo_arm_pct, se.relative_risk, se.severity, se.notes FROM safety_events se WHERE se.trial_id = 7"
+    },
+    "outputSize": 41,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:08:41.457Z",
+    "server": "fs",
+    "tool": "read_file",
+    "inputs": {
+      "filePath": "glp1/step-hfpef-summary.txt"
+    },
+    "outputSize": 1559,
+    "latencyMs": 10
+  },
+  {
+    "timestamp": "2026-03-23T22:09:57.423Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "EMPOWER trial semaglutide",
+      "top_k": 10
+    },
+    "outputSize": 6505,
+    "latencyMs": 1311
+  },
+  {
+    "timestamp": "2026-03-23T22:09:57.454Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name ILIKE '%EMPOWER%' OR trial_name ILIKE '%empower%'"
+    },
+    "outputSize": 102,
+    "latencyMs": 10
+  },
+  {
+    "timestamp": "2026-03-23T22:10:02.747Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "EMPOWER trial outcomes results",
+      "top_k": 10
+    },
+    "outputSize": 6455,
+    "latencyMs": 623
+  },
+  {
+    "timestamp": "2026-03-23T22:10:02.762Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name LIKE '%EMPOWER%' OR trial_name LIKE '%empower%' OR trial_name LIKE '%Empower%'"
+    },
+    "outputSize": 41,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:10:06.740Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 9
+  },
+  {
+    "timestamp": "2026-03-23T22:10:06.777Z",
+    "server": "rag",
+    "tool": "get_sources",
+    "inputs": {},
+    "outputSize": 641,
+    "latencyMs": 30
+  },
+  {
+    "timestamp": "2026-03-23T22:10:06.789Z",
+    "server": "fs",
+    "tool": "search_files",
+    "inputs": {
+      "pattern": "EMPOWER"
+    },
+    "outputSize": 41,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T22:10:09.709Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:10:12.376Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT trial_name, drug, indication, publication_year FROM trials ORDER BY trial_name"
+    },
+    "outputSize": 1399,
+    "latencyMs": 6
+  },
+  {
+    "timestamp": "2026-03-23T22:16:27.506Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "EMPOWER trial semaglutide",
+      "top_k": 10
+    },
+    "outputSize": 6505,
+    "latencyMs": 634
+  },
+  {
+    "timestamp": "2026-03-23T22:16:27.529Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE trial_name ILIKE '%EMPOWER%'"
+    },
+    "outputSize": 102,
+    "latencyMs": 15
+  },
+  {
+    "timestamp": "2026-03-23T22:16:31.462Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE LOWER(trial_name) LIKE '%empower%'"
+    },
+    "outputSize": 41,
+    "latencyMs": 7
+  },
+  {
+    "timestamp": "2026-03-23T22:16:31.472Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 4
+  },
+  {
+    "timestamp": "2026-03-23T22:16:31.754Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "EMPOWER clinical trial GLP-1 results outcomes",
+      "top_k": 10
+    },
+    "outputSize": 6264,
+    "latencyMs": 276
+  },
+  {
+    "timestamp": "2026-03-23T22:16:36.473Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "trials"
+    },
+    "outputSize": 2241,
+    "latencyMs": 5
+  },
+  {
+    "timestamp": "2026-03-23T22:16:37.017Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "EMPOWER semaglutide weight loss diabetes cardiovascular",
+      "top_k": 5
+    },
+    "outputSize": 3245,
+    "latencyMs": 540
+  },
+  {
+    "timestamp": "2026-03-23T22:16:37.045Z",
+    "server": "rag",
+    "tool": "get_sources",
+    "inputs": {},
+    "outputSize": 641,
+    "latencyMs": 20
   }
 ]
