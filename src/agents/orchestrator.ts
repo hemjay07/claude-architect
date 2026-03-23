@@ -1,8 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { MCPClient } from "../mcp_client/client";
-import { loadPrompt } from "../prompt_library/prompt_loader";
-import { validateOutput } from "../prompt_library/schema_validator";
-import { ClinicalSynthesisSchema } from "../prompt_library/schemas/clinical_synthesis_schema";
 import { runResearcher } from "./researcher";
 import { runCritic } from "./critic";
 import {

@@ -18178,5 +18178,97 @@
     },
     "outputSize": 815,
     "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T21:55:56.942Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide cardiovascular outcomes type 2 diabetes",
+      "top_k": 10
+    },
+    "outputSize": 6759,
+    "latencyMs": 603
+  },
+  {
+    "timestamp": "2026-03-23T21:55:56.965Z",
+    "server": "db",
+    "tool": "list_tables",
+    "inputs": {},
+    "outputSize": 122,
+    "latencyMs": 14
+  },
+  {
+    "timestamp": "2026-03-23T21:56:03.089Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide MACE reduction HbA1c weight loss T2DM SUSTAIN",
+      "top_k": 8
+    },
+    "outputSize": 5263,
+    "latencyMs": 562
+  },
+  {
+    "timestamp": "2026-03-23T21:56:03.101Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT * FROM trials WHERE drug LIKE '%semaglutide%' ORDER BY trial_name;"
+    },
+    "outputSize": 3824,
+    "latencyMs": 5
+  },
+  {
+    "timestamp": "2026-03-23T21:56:03.110Z",
+    "server": "db",
+    "tool": "describe_table",
+    "inputs": {
+      "name": "safety_events"
+    },
+    "outputSize": 815,
+    "latencyMs": 3
+  },
+  {
+    "timestamp": "2026-03-23T21:56:08.417Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT se.*, t.trial_name, t.drug FROM safety_events se JOIN trials t ON se.trial_id = t.id WHERE t.drug LIKE '%semaglutide%' AND t.indication LIKE '%T2DM%' ORDER BY t.trial_name, se.event_type;"
+    },
+    "outputSize": 41,
+    "latencyMs": 8
+  },
+  {
+    "timestamp": "2026-03-23T21:56:09.053Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "semaglutide diabetic retinopathy safety signal cardiovascular mechanisms pleiotropic",
+      "top_k": 6
+    },
+    "outputSize": 3935,
+    "latencyMs": 631
+  },
+  {
+    "timestamp": "2026-03-23T21:56:14.463Z",
+    "server": "rag",
+    "tool": "search",
+    "inputs": {
+      "query": "GLP-1 receptor agonist cardiovascular mechanisms endothelial blood pressure inflammation",
+      "top_k": 5
+    },
+    "outputSize": 3457,
+    "latencyMs": 624
+  },
+  {
+    "timestamp": "2026-03-23T21:56:14.471Z",
+    "server": "db",
+    "tool": "query_db",
+    "inputs": {
+      "sql": "SELECT trial_name, drug, indication, n_total, duration_years, primary_endpoint, primary_result, primary_p_value, superiority, hba1c_reduction, weight_reduction_kg, cv_death_rr, publication_year FROM trials WHERE indication LIKE '%T2DM%' AND drug LIKE '%semaglutide%' ORDER BY publication_year;"
+    },
+    "outputSize": 1511,
+    "latencyMs": 4
   }
 ]

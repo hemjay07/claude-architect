@@ -24,6 +24,7 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
  export class MCPClient {
     private dbClient: Client;
     private fsClient: Client;
+    private ragClient: Client;
     private toolRegistry: Map<string, string> = new Map();
     private connected = false;
     private toolDefinitions: Map<string, any> = new Map();
@@ -38,6 +39,10 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
             name: "clinical-research-agent",
             version: "1.0.0"
         });
+        this.ragClient = new Client({
+             name: "rag-client", 
+             version: "1.0.0" });
+
     }
 
      async connect(){
@@ -51,6 +56,12 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
             args:[path.join(process.cwd(),"dist/src/mcp_servers/filesystem/server.js" )]
         })
 
+        const ragTransport = new StdioClientTransport({
+            command: "node",
+            args: [path.join(process.cwd(), "dist/src/mcp_servers/rag/server.js")]
+        });
+        
+        await this.ragClient.connect(ragTransport);
         await this.dbClient.connect(dbTransport)
         await this.fsClient.connect(fsTransport)
 
@@ -79,6 +90,16 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
             });
         }
 
+        const ragTools = await this.ragClient.listTools()
+        for (const tool of ragTools.tools){
+            this.toolRegistry.set(`rag__${tool.name}`,"rag")
+            this.toolDefinitions.set(`rag__${tool.name}`, {
+                name: `rag__${tool.name}`,
+                description: tool.description,
+                input_schema: tool.inputSchema,
+            });
+        }
+
         this.connected = true
         console.log(`Connected. Tool registry: ${[...this.toolRegistry.keys()].join(", ")}`);
     }
@@ -96,7 +117,7 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
     const toolName = namespacedTool.split("__")[1]
     const start = Date.now()
 
-    const client = server === "db" ? this.dbClient : this.fsClient
+    const client = server === "db" ? this.dbClient : server === "rag" ? this.ragClient : this.fsClient;
     const result = await client.callTool({name: toolName, arguments:args})
 
     const outputSize = JSON.stringify(result).length
@@ -116,6 +137,7 @@ function logAudit(server: string, tool: string, inputs: unknown, outputSize: num
     async disconnect() {
     await this.dbClient.close();
     await this.fsClient.close();
+    await this.ragClient.close();
     this.connected = false;
     }
 }
