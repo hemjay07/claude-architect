@@ -1,6 +1,6 @@
 # Claude Architect
 
-A production-grade GLP-1 clinical research agent built as part of the **Claude Certified Architect** curriculum. Every phase is built from scratch — no frameworks, no pre-built agents. Built in public on X ([@__mujeeb__](https://x.com/__mujeeb__)).
+A production-grade GLP-1 clinical research agent. Three AI agents, three MCP servers, hybrid RAG search, and an eval suite — TypeScript, no frameworks. Built in public on X ([@__mujeeb__](https://x.com/__mujeeb__)).
 
 ## What This Is
 
@@ -112,7 +112,7 @@ Worst-performing cases are straightforward questions where the agent's data sour
 - **RAG**: Hybrid BM25 + cosine similarity, OpenAI `text-embedding-3-small`, reciprocal rank fusion
 - **Models**: Haiku (routing/extraction) · Sonnet (researcher/critic/synthesis/eval judge)
 - **Eval**: LLM-as-a-Judge, regression detection, versioned runs, per-case timing
-- **Tools**: Claude Code — built with AI assistance, every decision understood and defensible
+- **Tools**: Claude, Anthropic API, OpenAI Embeddings API
 
 ## Key Design Decisions
 
@@ -221,4 +221,3 @@ Key findings from [COST_ARCHITECTURE.md](./COST_ARCHITECTURE.md):
 ## Domain
 
 All literature files sourced from published peer-reviewed data. Ground truth validated against primary publications. Database covers: SUSTAIN-6, SELECT, PIONEER-6, LEADER, SURPASS-CVOT, STEP-1, STEP-HFpEF, FLOW, EMPA-KIDNEY, SURMOUNT-1, AWARD-11, ELIXA.
-
