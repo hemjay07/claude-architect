@@ -222,4 +222,3 @@ Key findings from [COST_ARCHITECTURE.md](./COST_ARCHITECTURE.md):
 
 All literature files sourced from published peer-reviewed data. Ground truth validated against primary publications. Database covers: SUSTAIN-6, SELECT, PIONEER-6, LEADER, SURPASS-CVOT, STEP-1, STEP-HFpEF, FLOW, EMPA-KIDNEY, SURMOUNT-1, AWARD-11, ELIXA.
 
----
