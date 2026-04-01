@@ -1,6 +1,6 @@
 # Claude Architect
 
-A production-grade GLP-1 clinical research agent. Three AI agents, three MCP servers, hybrid RAG search, and an eval suite — TypeScript, no frameworks. Built in public on X ([@__mujeeb__](https://x.com/__mujeeb__)).
+A production-grade GLP-1 clinical research agent. Three AI agents, three MCP servers, hybrid RAG search, and an eval suite — TypeScript, no frameworks. Built in public on X ([@__mujeeb__](https://x.com/__mujeeb__))
 
 ## What This Is
 
